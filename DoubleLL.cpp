@@ -50,7 +50,7 @@ bool DoubleLL::isEmpty() {
   return true;
 }
 
-int DoubleLL::size(){
+int DoubleLL::getSize(){
   return m_size;
 }
 
@@ -186,6 +186,72 @@ void DoubleLL::deleteAll(int elem) {
     m_size--;
 
   }
+
+}
+
+void DoubleLL::deleteAtInd(int ind)
+{
+  try {
+
+    if( ind > m_size || ind < 0 )
+    {
+
+        throw std::out_of_range ("index out of bounds");
+
+    }
+
+  }
+  catch(std::out_of_range &oor)
+  {
+
+      printf("exception found: %s \n",oor.what());
+
+      return;
+
+  }
+
+  node<int>* temp = m_front;
+
+  int searchInd = 0;
+
+  if ( ind == 0)
+  {
+
+    m_front = m_front->getNext();
+
+    delete temp;
+
+  }
+  else if( ind == (m_size - 1))
+  {
+
+    temp = m_back;
+
+    m_back = m_back->getPrev();
+
+    delete temp;
+
+  }
+  else
+  {
+
+      while ( ind != searchInd )
+      {
+        searchInd++;
+
+        temp = temp->getNext();
+
+      }
+      temp->getPrev()->setNext(temp->getNext());
+
+      temp->getNext()->setPrev(temp->getPrev());
+
+      delete temp;
+
+  }
+
+  m_size--;
+
 
 }
 

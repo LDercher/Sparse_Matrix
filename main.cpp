@@ -25,7 +25,7 @@ int main(int argCount, char** args){
   initialize(myDoubleLL, argCount, args);
   printMenu();
   cin >> option;
-  while(option != 5){
+  while(option != 6){
     switch(option){
     case 1:
       cout << "Enter element to add: ";
@@ -53,6 +53,11 @@ int main(int argCount, char** args){
       //4: print
       myDoubleLL->print();
       break;
+    case 5:
+      cout << "Enter index to be deleted";
+      cin >> elem;
+      myDoubleLL->deleteAtInd(elem);
+      myDoubleLL->print();
     default:
       cout << "Invalid argument. Please try again" << endl;
       break;
@@ -74,7 +79,8 @@ void printMenu(){
   cout << "2: delete" << endl;
   cout << "3: find" << endl;
   cout << "4: print" << endl;
-  cout << "5: exit" << endl;
+  cout << "5: delete at index " << endl;
+  cout << "6: exit" << endl;
   cout << ">> ";
 }
 
@@ -94,7 +100,7 @@ void initialize(DoubleLL*  myDoubleLL, int argCount, char** args){
       int newElement;
       inputData >> newElement;
       if (inputData.good()){
-      myDoubleLL->add(newElement, myDoubleLL->size());
+      myDoubleLL->add(newElement, myDoubleLL->getSize());
     }
     }
     inputData.close();

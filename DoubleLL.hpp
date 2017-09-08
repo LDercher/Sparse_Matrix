@@ -1,3 +1,10 @@
+/**
+*	@file : DoubleLL.hpp
+*	@author :  Luke Dercher
+*	@date : 2017.09.08
+*	Purpose: Header file of doulbe linked list data structure class
+*/
+
 #ifndef DoubleLL_H
 #define DoubleLL_H
 #include "node.cpp"
@@ -18,78 +25,111 @@ private:
  public:
 
   /**
-   * Public constructor to construct the DoubleLL
+   * @pre none
+   * @post none
+   * @return a doubly linked list w/ no contents
    */
   DoubleLL();
 
   /**
-   * Destructor to destroy the DoubleLL
+  * @pre none
+  * @post deletes doubly linked list
+  * @return none
    */
   ~DoubleLL();
 
   /**
-   * returns true if the DoubleLL is empty or returns false
+  * @pre none
+  * @post none
+  * @return a bool to indicate if DLL is empty
    */
   bool isEmpty();
 
   /**
-   * returns front of DLL
-   */
+  * @pre none
+  * @post none
+  * @return popinter to front node of DLL
+  */
   node<int>* getFront();
 
   /**
-   * returns tail of DLL
-   */
+  * @pre none
+  * @post none
+  * @return a pointer to the back nod of DLL
+  */
   node<int>* getBack();
 
   /**
-   * returns the size of the linked DoubleLL
-   */
-  int size();
+  * @pre none
+  * @post none
+  * @return size of DLL
+  */
+  int getSize();
 
   /**
-   * add and element on a specific position
+   * @pre none
+   * @post add and element on a specific position
    * Should throw an exception if the value of position
    * is not in range of [0, this.size()]
+   # @return none
    */
   void add(int elem, int position);
 
   /**
-   * Deletes all the occurences of the elem from the DoubleLL
-   */
+  * @pre none
+  * @post deletes all instances of input element does nothing if element isn't in list
+  * @return none
+  */
   void deleteAll(int elem);
 
   /**
-   * Should find the first occurence of the position of the element in the DoubleLL.
-   * returns -1 if the element does not exist in the DoubleLL
-   */
+  * @pre none
+  * @post deletes element at index given, throw exception if bad input given
+  * @return none
+  */
+  void deleteAtInd(int ind);
+
+
+  /**
+  * @pre none
+  * @post none
+  * @returns the emelent in the list or -1 if element isn't in the list.
+  */
   int find(int elem);
 
   /**
-   * Should find the index of the first occurence of the position of the element in the DoubleLL.
-   * returns -1 if the element does not exist in the DoubleLL
-   */
+  * @pre none
+  * @post none
+  * @return the index of the emelent in the list or -1 if element isn't in the list.
+  */
   int findInd(int elem);
 
- /**
-  * Adds a node to the front of the DLL
+  /**
+  * @pre none
+  * @post add element to front of the list with value of the input
+  * @return none
   */
- void addFront(int elem);
-
- /**
-  * Add a node to the end of the DLL
-  */
- void addBack (int elem);
+  void addFront(int elem);
 
   /**
-   * Prints all the elements of the DoubleLL with delimited with space
-   */
+  * @pre none
+  * @post none
+  * @return an element to the back of the list with a vlue of the given input
+  */
+  void addBack (int elem);
+
+  /**
+  * @pre none
+  * @post print contents of the list
+  * @return none
+  */
   void print();
 
   /**
-   * @input a DLL populated with nodes containing integers
-   * @Returns a pointer to a list of first occurrances of every item in the DLL
-   */
+  * @pre none
+  * @post none
+  * @return a doubly linked list w/ the indeces of the first ocurrance of each element in the input list
+  */
   DoubleLL* getPositionList( DoubleLL* );
 };
 
