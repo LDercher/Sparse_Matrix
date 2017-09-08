@@ -8,6 +8,9 @@
 #ifndef NODE_H
 #define NODE_H
 #include <stdexcept>
+#include <tuple>
+
+using namespace std;
 
 template <class T>
 class node
@@ -20,6 +23,8 @@ private:
 
     T m_value;
 
+    tuple<int,int> coord;
+
 public:
 
     /**
@@ -28,6 +33,20 @@ public:
     *  @return Initialzed node with m_value set to T() and m_next set to null pointer
     */
     node();
+
+    /**
+    *  @pre none
+    *  @post sets a new value for for the node
+    *  @return none
+    */
+    void setCoord (int x, int y);
+
+    /**
+    *  @pre none
+    *  @post none
+    *  @return tuple coord
+    */
+    tuple<int,int> getCoord ();
 
     /**
     *  @pre m_value has been initialized to zero

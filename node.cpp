@@ -18,6 +18,18 @@ node<T>::node()
 }
 
 template <class T>
+void node<T>::setCoord(int x,int y)
+{
+    coord = make_tuple( x,y );
+}
+
+template <class T>
+tuple<int,int> node<T>::getCoord()
+{
+    return coord;
+}
+
+template <class T>
 void node<T>::setValue(T value)
 {
     m_value = value;
