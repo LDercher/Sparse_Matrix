@@ -31,7 +31,21 @@ void SparesMatrix::add(tuple<int,int> pos, int val){
 
   }
 
-  if( m_SM<0>  )
+  node<int>* temp1 = m_SM->getFront();
+
+  node<int>* temp2 = temp1->getNext();
+
+  if( get<0>(temp1->getCoord()) > get<0>(pos) && get<0>(temp2->getCoord()) < get<0>(pos))
+  {
+
+    if( get<1>(temp1->getCoord()) > get<1>(pos) && get<1>(temp2->getCoord()) < get<1>(pos) )
+    {
+
+      m_Sm->add()
+
+    }
+
+  }
 }
 
 void SparseMatrix::remove(tuple<int,int> pos)
