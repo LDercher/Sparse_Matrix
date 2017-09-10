@@ -6,16 +6,26 @@ SparseMatrix::SparseMatrix(tuple<int,int> dims){
 
   m_dims = dims;
 
-/*  for(int i = 0; i < max(get<0>(m_dims),get<1>(m_dims)); i++)
+ for(int i = 0; i < max(get<0>(dims),get<1>(dims)) - 1; i++)
   {
     rowOrcolPointers[i] = nullptr;
-  } */
+  }
 
   m_orientation_row = true;
 
 }
 
 SparseMatrix::~SparseMatrix(){
+
+  for(int i = 0; i < max(get<0>(m_dims),get<1>(m_dims)) - 1; i++)
+   {
+     if (rowOrcolPointers[i] != NULL)
+     {
+       delete &rowOrcolPointers[i];
+     }
+   }
+
+  delete rowOrcolPointers;
 
 }
 
@@ -42,7 +52,7 @@ void SparseMatrix::add(tuple<int,int> pos, int val){
 
   if( m_orientation_row)
   {
-    if(rowOrcolPointers[get<1>(pos)]->getFront() == nullptr)
+    if(rowOrcolPointers[get<1>(pos)] == nullptr)
     {
       rowOrcolPointers[get<1>(pos)] = new DoubleLL();
 
@@ -53,7 +63,9 @@ void SparseMatrix::add(tuple<int,int> pos, int val){
      rowOrcolPointers[get<1>(pos)]->add(val, get<0>(pos), get<1>(pos));
     }
   }
-    if(rowOrcolPointers[get<0>(pos)]->getFront() == nullptr)
+  else{
+
+    if(rowOrcolPointers[get<0>(pos)] == nullptr)
     {
       rowOrcolPointers[get<0>(pos)] = new DoubleLL();
 
@@ -64,18 +76,25 @@ void SparseMatrix::add(tuple<int,int> pos, int val){
       rowOrcolPointers[get<0>(pos)]->add(val, get<1>(pos), get<0>(pos));
     }
 
+  }
+
 }
 
 void SparseMatrix::print()
 {
-
+  node<int>* temp;
   if(m_orientation_row)
   {
-    for( int i = 0; i < get<0>(m_dims); i++)
+    for( int i = 0; i < get<0>(m_dims) - 1; i++)
     {
-      node<int>* temp = rowOrcolPointers[i]->getFront();
-
-      for( int j = 0; j < get<1>(m_dims); j++)
+      if (rowOrcolPointers[i] != nullptr)
+      {
+      temp = rowOrcolPointers[i]->getFront();
+      }
+      else{
+        temp = nullptr;
+      }
+      for( int j = 0; j < get<1>(m_dims) - 1 ; j++)
       {
         if( temp == nullptr)
         {
@@ -92,11 +111,11 @@ void SparseMatrix::print()
   }
   else
   {
-    for( int i = 0; i < get<1>(m_dims); i++)
+    for( int i = 0; i < get<1>(m_dims) - 1; i++)
     {
       node<int>* temp = rowOrcolPointers[i]->getFront();
 
-      for( int j = 0; j < get<0>(m_dims); j++)
+      for( int j = 0; j < get<0>(m_dims) - 1; j++)
       {
         if( temp == nullptr)
         {

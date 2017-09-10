@@ -8,7 +8,7 @@
 #ifndef SparseMatrix_H
 #define SparseMatrix_H
 #include <tuple>
-#include <stdexcept>
+#include <cstdint>
 
 #include "DoubleLL.hpp"
 
