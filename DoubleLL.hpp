@@ -10,6 +10,7 @@
 #include "node.cpp"
 #include "util.hpp"
 #include <stdexcept>
+#include <tuple>
 
 class DoubleLL {
 
@@ -73,7 +74,7 @@ private:
    * is not in range of [0, this.size()]
    # @return none
    */
-  void add(int elem, int position);
+  void add(int elem, int Xcoord, int Ycoord, int position) ;
 
   /**
   * @pre none

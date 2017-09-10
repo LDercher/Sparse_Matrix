@@ -54,7 +54,7 @@ int DoubleLL::getSize(){
   return m_size;
 }
 
-void DoubleLL::add(int elem, int position) {
+void DoubleLL::add(int elem, int Xcoord, int Ycoord, int position) {
 
   try {
 
@@ -82,6 +82,8 @@ void DoubleLL::add(int elem, int position) {
       m_back = new node<int>();
 
       m_back -> setValue(elem);
+
+      m_back -> setCoord(Xcoord, Ycoord);
 
       m_front = m_back;
 
@@ -115,6 +117,8 @@ void DoubleLL::add(int elem, int position) {
         node<int>* new_node = new node<int>();
 
         new_node->setValue(elem);
+
+        new_node -> setCoord(Xcoord, Ycoord);
 
         pos->getPrev()->setNext (new_node);
 

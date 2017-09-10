@@ -1,9 +1,11 @@
 #include <iostream>
 #include <fstream>
+#include <tuple>
 
 #include "util.hpp"
 #include "DoubleLL.hpp"
 #include "node.hpp"
+#include "SparseMatrix.hpp"
 
 using namespace std;
 
@@ -20,9 +22,12 @@ int main(int argCount, char** args){
   int option;
   int elem;
   DoubleLL* myDoubleLL = new DoubleLL();
+  tuple<int,int> dims = make_tuple(5,5);
+  SparseMatrix* mySM = new SparseMatrix(dims);
+
 
   //read from the file and initialize the doubly link DoubleLL
-  initialize(myDoubleLL, argCount, args);
+  initialize(mySM, argCount, args);
   printMenu();
   cin >> option;
   while(option != 6){
@@ -33,7 +38,7 @@ int main(int argCount, char** args){
       cin >> newElement;
       cout << "Enter position to add element: ";
       cin >> position;
-      myDoubleLL->add(newElement, position);
+    //  myDoubleLL->add(newElement, position);
       myDoubleLL->print();
       break;
     case 2:
@@ -89,6 +94,7 @@ void printMenu(){
  */
 void initialize(DoubleLL*  myDoubleLL, int argCount, char** args){
     fstream inputData;
+    int inc = 0;
     if(argCount < 2){
       cout << "No input file given, using default data.txt" << endl;
       inputData.open("data.txt", ifstream::in);
@@ -100,13 +106,14 @@ void initialize(DoubleLL*  myDoubleLL, int argCount, char** args){
       int newElement;
       inputData >> newElement;
       if (inputData.good()){
-      myDoubleLL->add(newElement, myDoubleLL->getSize());
+        inc++;
+      mySM->add(newElement,inc,0, myDoubleLL->getSize());
     }
     }
     inputData.close();
-    myDoubleLL->print();
+    mySM->print();
 }
 
 void cleanUp(DoubleLL* myDoubleLL){
-  delete myDoubleLL;
+  delete mySM;
 }

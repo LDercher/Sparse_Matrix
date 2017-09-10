@@ -7,8 +7,8 @@ FILES=Makefile main.cpp DoubleLL.hpp DoubleLL.cpp util.cpp util.hpp node.hpp nod
 
 ARCHIVE_FOLDER=$(STUDENT_ID)-$(LAB_NAME)
 
-build: DoubleLL util main node
-	$(GCC) $(CFLAGS) -o main DoubleLL.o util.o main.o node.o
+build: DoubleLL util main node SparseMatrix
+	$(GCC) $(CFLAGS) -o main DoubleLL.o util.o main.o node.o SparseMatrix.o
 
 test:
 	./main
@@ -21,6 +21,9 @@ DoubleLL: node
 
 node:
 		$(GCC) $(CFLAGS) -c node.cpp -o node.o
+
+SparseMatrix: DoubleLL
+		$(GCC) $(CFLAGS) -c SparseMatrix.cpp -o SparseMatrix.o
 
 main: DoubleLL
 	$(GCC) $(CFLAGS) -c main.cpp -o main.o

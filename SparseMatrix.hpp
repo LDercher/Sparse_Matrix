@@ -9,6 +9,7 @@
 #define SparseMatrix_H
 #include <tuple>
 #include <stdexcept>
+#include "DoubleLL.hpp"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ class SparseMatrix {
 
     int m_numElems;
 
-    DoubleLL * m_SM;
+    DoubleLL* m_SM;
 
   public:
 
@@ -84,9 +85,9 @@ class SparseMatrix {
     */
     SparseMatrix* transpose();
 
-}
+};
 
 
 
 
-#endif SparseMatrix_H
+#endif //SparseMatrix_H
