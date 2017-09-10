@@ -34,16 +34,14 @@ int main(int argCount, char** args){
     switch(option){
     case 1:
       cout << "Enter element to add to SparseMatrix: ";
-      int newElement, position, col, row;
+      int newElement, col, row;
       cin >> newElement;
-      cout << "Enter position to add element: ";
-      cin >> position;
-      cout << "Enter column to add at";
+      cout << "Enter column to add at ";
       cin >> col;
-      cout << "Enter row to add at";
+      cout << "Enter row to add at ";
       cin >> row;
-      //mySM->add(newElement, position);
-      //mySM->print();
+      mySM->add(make_tuple(col,row), newElement);
+      mySM->print();
       break;
     case 2:
       // 2: delete
@@ -60,7 +58,7 @@ int main(int argCount, char** args){
       break;
     case 4:
       //4: print
-      myDoubleLL->print();
+      mySM->print();
       break;
     case 5:
       cout << "Enter index to be deleted";
@@ -74,7 +72,8 @@ int main(int argCount, char** args){
     printMenu();
     cin >> option;
   }
-
+delete mySM;
+delete myDoubleLL;
 //  cleanUp(myDoubleLL);
   return 0;
 }

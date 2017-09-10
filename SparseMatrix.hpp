@@ -9,6 +9,7 @@
 #define SparseMatrix_H
 #include <tuple>
 #include <stdexcept>
+
 #include "DoubleLL.hpp"
 
 using namespace std;
@@ -23,7 +24,7 @@ class SparseMatrix {
     //int m_numElems;
     bool m_orientation_row;
 
-    DoubleLL** rowOrcolPointers = new DoubleLL*[max(get<0>(m_dims),get<1>(m_dims))];
+  DoubleLL** rowOrcolPointers = new DoubleLL* [max(get<0>(m_dims),get<1>(m_dims))];
 
   public:
 
@@ -49,6 +50,13 @@ class SparseMatrix {
     * @return size of DLL
     */
     void add(tuple<int,int> pos, int val);
+
+    /**
+    * @pre none
+    * @post prints SparseMatrix
+    * @return none
+    */
+    void print();
 
     /**
     * @pre none
