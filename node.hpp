@@ -23,7 +23,7 @@ private:
 
     T m_value;
 
-    tuple<int,int> coord;
+    tuple<int,int> m_coord;
 
 public:
 

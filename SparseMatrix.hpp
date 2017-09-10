@@ -20,9 +20,10 @@ class SparseMatrix {
 
     tuple<int,int> m_dims;
 
-    int m_numElems;
+    //int m_numElems;
+    bool m_orientation_row;
 
-    DoubleLL* m_SM;
+    DoubleLL** rowOrcolPointers = new DoubleLL*[max(get<0>(m_dims),get<1>(m_dims))];
 
   public:
 
@@ -62,7 +63,8 @@ class SparseMatrix {
     * @post none
     * @return size of DLL
     */
-    int getDim();
+    tuple<int,int> getDims();
+
 
     /**
     * @pre none

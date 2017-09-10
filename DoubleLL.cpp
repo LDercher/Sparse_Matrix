@@ -54,11 +54,11 @@ int DoubleLL::getSize(){
   return m_size;
 }
 
-void DoubleLL::add(int elem, int Xcoord, int Ycoord, int position) {
+void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 
   try {
 
-    if( m_size < position)
+    if( - 1 > Ycoord || -1 > Xcoord)
     {
 
         throw std::out_of_range ("position out of bounds");
@@ -76,7 +76,7 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord, int position) {
   }
 
 
-  if (m_size == 0 && position == 0)
+  if (m_size == 0 && Ycoord == 0)
   {
       //if no elements in list
       m_back = new node<int>();
@@ -91,16 +91,16 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord, int position) {
   else
   {
 
-      if ( position == 0)
+      if ( Ycoord == 0)
       {
 
-      	addFront(elem);
+      	addFront(elem, Xcoord, Ycoord);
 
       }
-      else if (position == m_size )
+      else if (Ycoord == m_size )
       {
 
-	      addBack(elem);
+	      addBack(elem, Xcoord, Ycoord);
 
       }
       else
@@ -109,7 +109,7 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord, int position) {
         node<int>* pos = m_front;
 
         //loop through DLL to find node at pos
-        for(int i = 0; i < position; i++) //Might need to set i = 1 at beginning
+        for(int i = 0; i < Ycoord; i++) //Might need to set i = 1 at beginning
         {
           pos = pos->getNext();
         }
@@ -259,11 +259,13 @@ void DoubleLL::deleteAtInd(int ind)
 
 }
 
-void DoubleLL::addFront(int elem)
+void DoubleLL::addFront(int elem, int x, int y)
 {
    node<int>* new_node = new node<int>();
 
    new_node->setValue(elem);
+
+   new_node->setCoord(x,y);
 
    new_node->setNext(m_front);
 
@@ -273,12 +275,14 @@ void DoubleLL::addFront(int elem)
 
 }
 
-void DoubleLL::addBack(int elem)
+void DoubleLL::addBack(int elem, int x, int y)
 {
 
    node<int>* new_node = new node<int>();
 
    new_node->setValue(elem);
+
+   new_node->setCoord(x,y);
 
    new_node->setPrev(m_back);
 
@@ -372,7 +376,7 @@ DoubleLL* DoubleLL::getPositionList( DoubleLL* list ){
 
       tempVal = find(listIter->getValue());
 
-      posList->addBack(tempVal);
+      posList->addBack(tempVal, 0, 0);
 
       listIter = listIter->getNext();
 

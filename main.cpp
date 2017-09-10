@@ -27,26 +27,30 @@ int main(int argCount, char** args){
 
 
   //read from the file and initialize the doubly link DoubleLL
-  initialize(mySM, argCount, args);
+//initialize(mySM, argCount, args);
   printMenu();
   cin >> option;
   while(option != 6){
     switch(option){
     case 1:
-      cout << "Enter element to add: ";
-      int newElement, position;
+      cout << "Enter element to add to SparseMatrix: ";
+      int newElement, position, col, row;
       cin >> newElement;
       cout << "Enter position to add element: ";
       cin >> position;
-    //  myDoubleLL->add(newElement, position);
-      myDoubleLL->print();
+      cout << "Enter column to add at";
+      cin >> col;
+      cout << "Enter row to add at";
+      cin >> row;
+      //mySM->add(newElement, position);
+      //mySM->print();
       break;
     case 2:
       // 2: delete
       cout << "Enter element to be deleted: ";
       cin >> elem;
-      myDoubleLL->deleteAll(elem);
-      myDoubleLL->print();
+    //  mySM->deleteAll(elem);
+    //  mySM->print();
       break;
     case 3:
       //3: find
@@ -71,7 +75,7 @@ int main(int argCount, char** args){
     cin >> option;
   }
 
-  cleanUp(myDoubleLL);
+//  cleanUp(myDoubleLL);
   return 0;
 }
 
@@ -91,7 +95,7 @@ void printMenu(){
 
 /**
  * Initializes the data structures and program environment
- */
+
 void initialize(DoubleLL*  myDoubleLL, int argCount, char** args){
     fstream inputData;
     int inc = 0;
@@ -116,4 +120,4 @@ void initialize(DoubleLL*  myDoubleLL, int argCount, char** args){
 
 void cleanUp(DoubleLL* myDoubleLL){
   delete mySM;
-}
+} **/

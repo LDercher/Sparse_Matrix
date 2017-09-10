@@ -15,18 +15,20 @@ node<T>::node()
 
     m_value = T();
 
+    m_coord = make_tuple(0,0);
+
 }
 
 template <class T>
 void node<T>::setCoord(int x,int y)
 {
-    coord = make_tuple( x,y );
+    m_coord = make_tuple( x,y );
 }
 
 template <class T>
 tuple<int,int> node<T>::getCoord()
 {
-    return coord;
+    return m_coord;
 }
 
 template <class T>

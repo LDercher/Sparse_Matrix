@@ -74,7 +74,7 @@ private:
    * is not in range of [0, this.size()]
    # @return none
    */
-  void add(int elem, int Xcoord, int Ycoord, int position) ;
+  void add(int elem, int Xcoord, int Ycoord) ;
 
   /**
   * @pre none
@@ -110,14 +110,14 @@ private:
   * @post add element to front of the list with value of the input
   * @return none
   */
-  void addFront(int elem);
+  void addFront(int elem, int x, int y);
 
   /**
   * @pre none
   * @post none
   * @return an element to the back of the list with a vlue of the given input
   */
-  void addBack (int elem);
+  void addBack (int elem, int x, int y);
 
   /**
   * @pre none
