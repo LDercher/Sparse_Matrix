@@ -155,6 +155,33 @@ void SparseMatrix::remove(tuple<int,int> pos)
 
   }
 
+}
 
+tuple<int,int> SparseMatrix::getDims()
+{
+  return m_dims;
+}
+
+DoubleLL** SparseMatrix::getIndArr()
+{
+  return rowOrcolPointers;
+}
+
+bool SparseMatrix::isEqual(SparseMatrix* SM)
+{
+  if (get<0>(m_dims) != get<0>(SM->getDims()) ||get<1>(m_dims) != get<1>(SM->getDims()) )
+  {
+    return false;
+  }
+  else
+  {
+    for(int i = 0; i < max(get<0>(m_dims),get<1>(m_dims)) - 1; i++)
+     {
+       if (rowOrcolPointers[i] != NULL)
+       {
+          if(SM->get)
+       }
+     }
+  }
 
 }

@@ -73,20 +73,19 @@ class SparseMatrix {
     */
     tuple<int,int> getDims();
 
+    /**
+    * @pre none
+    * @post none
+    * @return index array for sparse matrix
+    */
+    DoubleLL** getIndArr();
 
     /**
     * @pre none
     * @post none
     * @return size of DLL
     */
-    int getNumElems();
-
-    /**
-    * @pre none
-    * @post none
-    * @return size of DLL
-    */
-    bool isEqual();
+    bool isEqual(SparseMatrix* SM);
 
     /**
     * @pre none
