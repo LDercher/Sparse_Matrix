@@ -34,6 +34,8 @@ class SparseMatrix {
     */
     SparseMatrix(tuple<int,int> dims);
 
+    void prettyprint();
+
     /**
     * @pre none
     * @post none

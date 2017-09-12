@@ -60,25 +60,6 @@ void DoubleLL::incSize(){
 
 void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 
-  if (m_size == 0)
-  {
-      //if no elements in list
-      m_back = new node<int>();
-
-      incSize();
-
-      m_back -> setValue(elem);
-
-      m_back -> setCoord(Xcoord, Ycoord);
-
-      m_front = m_back;
-
-      printf("adding first elem\n ycoord = %i",Ycoord);
-
-  }
-  else
-  {
-
       if ( Ycoord == 0)
       {
 
@@ -93,37 +74,27 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 	      addBack(elem, Xcoord, Ycoord);
 
         printf("adding Back!! size = %i ycoord = %i\n", m_size,Ycoord);
+        if(m_back->getNext())
+        {
+        printf("\n\n\nm_front get next pointing at null in list > 0 (after addback call)\n\n\n");
+        }
 
       }
       else
       {
         printf("Adding at %i size = %i \n\n",Ycoord,m_size);
 
-        node<int>* pos = m_front;
+        node<int>* pos = m_back;
+
+        if(pos->getPrev() == nullptr)
+        {
+          printf("\n\n\nM_BACK GET PREV IS NULLPTR ON LL WITH SIZE > 0\n\n\n");
+        }
 
         //loop through DLL to find node at pos
-        for(int i = 0; i < Ycoord; i++)
+        for(int i = 0; i < (m_size - 1) - Ycoord; i++)
         {
-          try {
-
-
-            pos = pos->getNext();
-
-                throw std::out_of_range ("DLL index out of bounds");
-
-
-
-          }
-          catch(std::out_of_range &oor)
-          {
-
-              printf("exception found: %s \n accessing %i- Ycoord  %i - size %i \n\n",oor.what(),i,Ycoord,m_size);
-
-              return;
-
-          }
-
-          pos = pos->getNext();
+          pos = pos->getPrev();
         }
 
         node<int>* new_node = new node<int>();
@@ -134,6 +105,9 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 
         new_node -> setCoord(Xcoord, Ycoord);
 
+        if( pos->getPrev() != nullptr)
+        {
+
         pos->getPrev()->setNext (new_node);
 
         new_node->setPrev(pos->getPrev());
@@ -142,10 +116,12 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 
         new_node->setNext(pos);
 
+       }
+
       }
-  }
 
 
+ print();
 
 }
 
@@ -300,7 +276,7 @@ void DoubleLL::addFront(int elem, int x, int y)
 
    }
 
-   incSize();;
+   incSize();
 
 }
 
@@ -329,6 +305,11 @@ void DoubleLL::addBack(int elem, int x, int y)
      m_back->setNext(new_node);
 
      m_back = new_node;
+
+     if(m_size == 2 )
+     {
+       m_front->setNext(new_node);
+     }
    }
 
    incSize();
@@ -390,10 +371,13 @@ void DoubleLL::print() {
 
 	printf("List: ");
 
-        for (int i = 0; i < m_size; i++ )
+        for (int i = 0; i < m_size - 1; i++ )
         {
           printf(" %i ", temp->getValue());
+          if(temp->getNext() != nullptr)
+          {
           temp = temp->getNext();
+          }
         }
 	printf("\n\n");
       }
