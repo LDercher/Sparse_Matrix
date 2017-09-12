@@ -28,6 +28,27 @@ SparseMatrix: DoubleLL
 main: DoubleLL
 	$(GCC) $(CFLAGS) -c main.cpp -o main.o
 
+analyze-add-tail: DoubleLL node
+	$(GCC) $(CFLAGS) -c analyze-add-tail.cpp -o analyze-add-tail.o
+	$(GCC) $(CFLAGS) -o add_tail_test DoubleLL.o node.o analyze-add-tail.o
+	./add_tail_test
+
+analyze-delete: DoubleLL node
+	$(GCC) $(CFLAGS) -c analyze-delete.cpp -o analyze-delete.o
+	$(GCC) $(CFLAGS) -o delete_test analyze-delete.o DoubleLL.o node.o
+	./delete_test
+
+analyze-getPositionList: DoubleLL node
+	$(GCC) $(CFLAGS) -c analyze-getPositionList.cpp -o analyze-gPL.o
+	$(GCC) $(CFLAGS) -o analyze-gPL analyze-gPL.o DoubleLL.o node.o
+	./analyze-gPL
+
+analyze-matrix-equality: DoubleLL node SparseMatrix
+	$(GCC) $(CFLAGS) -c analyze-matrix-equality.cpp -o analyze-matrix-equality.o
+	$(GCC) $(CFLAGS) -o MEtest analyze-matrix-equality.o SparseMatrix.o DoubleLL.o node.o
+	#./MEtest
+
+
 clean:
 	rm -rf main *.o rm $(ARCHIVE_FOLDER) $(ARCHIVE_FOLDER).tar.gz
 

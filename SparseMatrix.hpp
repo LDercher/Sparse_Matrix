@@ -19,10 +19,9 @@ class SparseMatrix {
 
   private:
 
-    tuple<int,int> m_dims;
+  tuple<int,int> m_dims;
 
-    //int m_numElems;
-    bool m_orientation_row;
+  bool m_orientation_row;
 
   DoubleLL** rowOrcolPointers = new DoubleLL* [max(get<0>(m_dims),get<1>(m_dims))];
 
@@ -60,18 +59,17 @@ class SparseMatrix {
 
     /**
     * @pre none
-    * @post removes value at position given, nothing if no elem exists
-    * at
-    * @return size of DLL
-    */
-    void remove(tuple<int,int> pos);
-
-    /**
-    * @pre none
     * @post none
     * @return size of DLL
     */
     tuple<int,int> getDims();
+
+    /**
+    * @pre none
+    * @post set_mdims to new value
+    * @return none
+    */
+    void setDims(tuple<int,int> dims);
 
     /**
     * @pre none
@@ -92,7 +90,7 @@ class SparseMatrix {
     * @post none
     * @return size of DLL
     */
-    SparseMatrix* transpose();
+    void transpose();
 
 };
 

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <tuple>
+#include <chrono>
+#include <thread>
 
 #include "util.hpp"
 #include "DoubleLL.hpp"
@@ -19,104 +21,96 @@ void cleanUp(DoubleLL* myDoubleLL);
  * i.e. ./main mytest.txt
  */
 int main(int argCount, char** args){
-  int option;
-  int elem;
-  DoubleLL* myDoubleLL = new DoubleLL();
-  tuple<int,int> dims = make_tuple(5,5);
-  SparseMatrix* mySM = new SparseMatrix(dims);
+  bool adding = true;
+  char yes_or_no;
+  tuple<int,int> dims;
+  SparseMatrix* sm1;
+  SparseMatrix* sm2;
 
-
-  //read from the file and initialize the doubly link DoubleLL
-//initialize(mySM, argCount, args);
-  printMenu();
-  cin >> option;
-  while(option != 6){
-    switch(option){
-    case 1:
-      cout << "Enter element to add to SparseMatrix: ";
-      int newElement, col, row;
-      cin >> newElement;
-      cout << "Enter column to add at ";
+printf( "\n\n\nWelcome to the Matrix! \n\n\n\n");
+printf("In this excerise the user will create two  sparse matrices (meaning they have very few elements). \n\n");
+printf("The user will specify the dimensions and add values to the matrix \n\n");
+printf("the user will be able to print the matrices, test them for equality,\n\n");
+printf("As well as transpose the matrices and see them printed afterwards.\n\n");
+int col, ro, val;
+      cout << "Enter element the dimensions of the first SparseMatrix: \n";
+      cout << "Enter the number of columns:\n";
       cin >> col;
-      cout << "Enter row to add at ";
-      cin >> row;
-      mySM->add(make_tuple(col,row), newElement);
-      mySM->print();
-      break;
-    case 2:
-      // 2: delete
-      cout << "Enter element to be deleted: ";
-      cin >> elem;
-    //  mySM->deleteAll(elem);
-    //  mySM->print();
-      break;
-    case 3:
-      //3: find
-      cout << "Enter element to be searched: ";
-      cin >> elem;
-      printf("%i\n\n", myDoubleLL->find(elem));
-      break;
-    case 4:
-      //4: print
-      mySM->print();
-      break;
-    case 5:
-      cout << "Enter index to be deleted";
-      cin >> elem;
-      myDoubleLL->deleteAtInd(elem);
-      myDoubleLL->print();
-    default:
-      cout << "Invalid argument. Please try again" << endl;
-      break;
-    }
-    printMenu();
-    cin >> option;
-  }
-delete mySM;
-delete myDoubleLL;
-//  cleanUp(myDoubleLL);
+      cout << "Enter the number of rows:\n";
+      cin >> ro;
+      dims = make_tuple(col, ro);
+      sm1 = new SparseMatrix(dims);
+      while(adding)
+      {
+        cout << "Enter element of the first SparseMatrix and placement of it (not too many): \n";
+        cout << "Enter value\n";
+        cin >> val;
+        cout << "Enter column number to place it in (be careful to not go out of bounds!)\n";
+        cin >> col;
+        cout << "Enter row number to place it in (be careful to not go out of bounds!)\n";
+        cin >> ro;
+        cout << "Adding value to first SparesMatrix\n";
+        dims = make_tuple(col, ro);
+        sm1->add(dims,val);
+        cout << "done adding? (y for yes, n for no) \n\n";
+        cin >> yes_or_no;
+        if(yes_or_no == 'y')
+        {
+          adding = false;
+        }
+
+      }
+      adding = true;
+      sm1->print();
+      cout << "\n\nEnter element the dimensions of the second SparseMatrix: \n";
+      cout << "Enter the number of columns:\n";
+      cin >> col;
+      cout << "Enter the number of rows:\n";
+      cin >> ro;
+      dims = make_tuple(col, ro);
+      sm2 = new SparseMatrix(dims);
+      while(adding)
+      {
+        cout << "Enter element of the second SparseMatrix and placement of it (not too many): \n";
+        cout << "Enter value\n";
+        cin >> val;
+        cout << "Enter column number to place it in (be careful to not go out of bounds!)\n";
+        cin >> col;
+        cout << "Enter row number to place it in (be careful to not go out of bounds!)\n";
+        cin >> ro;
+        cout << "Adding value to second SparesMatrix\n";
+        dims = make_tuple(col, ro);
+        sm2->add(dims,val);
+        cout << "done adding? (y for yes, n for no) \n\n";
+        cin >> yes_or_no;
+        if(yes_or_no == 'y')
+        {
+          adding = false;
+        }
+
+      }
+      sm2->print();
+      cout << "\n\n\n Now let's see if the matrices you created are equal.\n\n\n";
+      cout << "checking equality.....\n\n\n";
+      if(sm1->isEqual(sm2))
+      {
+        cout << "Your matrices are equal \n\n\n Good Job!!\n\n\n";
+      }
+      else
+      {
+        cout << "Your matrices are not equal \n\n\n:-(";
+      }
+      cout << "Now let's transpose them! \n\n\n";
+      sm1->transpose();
+      sm2->transpose();
+      printf("SparseMatrix 1 transposed is:\n");
+      sm1->print();
+      printf("\n\nSparseMatrix two transposed is:\n");
+      sm2->print();
+
+
+delete sm1;
+delete sm2;
+
   return 0;
 }
-
-/**
- * Prints the menu of choices to the user
- */
-void printMenu(){
-  cout << "Please choose one of the following commands:" << endl;
-  cout << "1: add" << endl;
-  cout << "2: delete" << endl;
-  cout << "3: find" << endl;
-  cout << "4: print" << endl;
-  cout << "5: delete at index " << endl;
-  cout << "6: exit" << endl;
-  cout << ">> ";
-}
-
-/**
- * Initializes the data structures and program environment
-
-void initialize(DoubleLL*  myDoubleLL, int argCount, char** args){
-    fstream inputData;
-    int inc = 0;
-    if(argCount < 2){
-      cout << "No input file given, using default data.txt" << endl;
-      inputData.open("data.txt", ifstream::in);
-    } else {
-      cout << "Using data from " << args[1] << endl;
-      inputData.open(args[1], ifstream::in);
-    }
-    while(!inputData.eof()){
-      int newElement;
-      inputData >> newElement;
-      if (inputData.good()){
-        inc++;
-      mySM->add(newElement,inc,0, myDoubleLL->getSize());
-    }
-    }
-    inputData.close();
-    mySM->print();
-}
-
-void cleanUp(DoubleLL* myDoubleLL){
-  delete mySM;
-} **/

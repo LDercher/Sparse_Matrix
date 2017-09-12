@@ -54,38 +54,26 @@ int DoubleLL::getSize(){
   return m_size;
 }
 
+void DoubleLL::incSize(){
+  m_size++;
+}
+
 void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 
-  try {
-
-    if( - 1 > Ycoord || -1 > Xcoord)
-    {
-
-        throw std::out_of_range ("position out of bounds");
-
-    }
-
-  }
-  catch(std::out_of_range &oor)
-  {
-
-      printf("exception found: %s \n",oor.what());
-
-      return;
-
-  }
-
-
-  if (m_size == 0 && Ycoord == 0)
+  if (m_size == 0)
   {
       //if no elements in list
       m_back = new node<int>();
+
+      incSize();
 
       m_back -> setValue(elem);
 
       m_back -> setCoord(Xcoord, Ycoord);
 
       m_front = m_back;
+
+      printf("adding first elem\n ycoord = %i",Ycoord);
 
   }
   else
@@ -96,25 +84,51 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 
       	addFront(elem, Xcoord, Ycoord);
 
+        printf("adding front!! size = %i ycoord = %i\n", m_size,Ycoord);
+
       }
-      else if (Ycoord == m_size )
+      else if (Ycoord >= m_size )
       {
 
 	      addBack(elem, Xcoord, Ycoord);
 
+        printf("adding Back!! size = %i ycoord = %i\n", m_size,Ycoord);
+
       }
       else
       {
+        printf("Adding at %i size = %i \n\n",Ycoord,m_size);
 
         node<int>* pos = m_front;
 
         //loop through DLL to find node at pos
-        for(int i = 0; i < Ycoord; i++) //Might need to set i = 1 at beginning
+        for(int i = 0; i < Ycoord; i++)
         {
+          try {
+
+
+            pos = pos->getNext();
+
+                throw std::out_of_range ("DLL index out of bounds");
+
+
+
+          }
+          catch(std::out_of_range &oor)
+          {
+
+              printf("exception found: %s \n accessing %i- Ycoord  %i - size %i \n\n",oor.what(),i,Ycoord,m_size);
+
+              return;
+
+          }
+
           pos = pos->getNext();
         }
 
         node<int>* new_node = new node<int>();
+
+        incSize();
 
         new_node->setValue(elem);
 
@@ -131,7 +145,7 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
       }
   }
 
-  m_size ++;
+
 
 }
 
@@ -286,6 +300,8 @@ void DoubleLL::addFront(int elem, int x, int y)
 
    }
 
+   incSize();;
+
 }
 
 void DoubleLL::addBack(int elem, int x, int y)
@@ -314,6 +330,8 @@ void DoubleLL::addBack(int elem, int x, int y)
 
      m_back = new_node;
    }
+
+   incSize();
 
 }
 

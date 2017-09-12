@@ -67,6 +67,8 @@ private:
   */
   int getSize();
 
+  void incSize();
+
   /**
    * @pre none
    * @post add and element on a specific position
