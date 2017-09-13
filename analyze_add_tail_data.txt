@@ -1,0 +1,437 @@
+
+int numElems[9] = {10,50,100,500,1000,5000,10000,50000,100000};
+
+input size corresponds to elems in array
+
+
+test num:0
+time:0.0000000000
+ave:0.0000000000
+input size(ascending):0
+test num:1
+time:0.0000020000
+ave:0.0000000000
+input size(ascending):0
+test num:2
+time:0.0000020000
+ave:0.0000000000
+input size(ascending):0
+test num:3
+time:0.0000020000
+ave:0.0000000000
+input size(ascending):0
+test num:4
+time:0.0000020000
+ave:0.0000000000
+input size(ascending):0
+test num:5
+time:0.0000020000
+ave:0.0000000000
+input size(ascending):0
+test num:6
+time:0.0000020000
+ave:0.0000000000
+input size(ascending):0
+test num:7
+time:0.0000020000
+ave:0.0000000000
+input size(ascending):0
+test num:8
+time:0.0000020000
+ave:0.0000000000
+input size(ascending):0
+test num:9
+time:0.0000020000
+ave:0.0000000000
+input size(ascending):0
+test num:10
+time:0.0000020000
+ave:0.0000000000
+input size(ascending):0
+test num:11
+time:0.0000000000
+ave:0.0000000000
+input size(ascending):1
+test num:0
+time:0.0000000000
+ave:24340111.5151220225
+input size(ascending):1
+test num:1
+time:0.0000090000
+ave:24340111.5151220225
+input size(ascending):1
+test num:2
+time:0.0000080000
+ave:24340111.5151220225
+input size(ascending):1
+test num:3
+time:0.0000080000
+ave:24340111.5151220225
+input size(ascending):1
+test num:4
+time:0.0000080000
+ave:24340111.5151220225
+input size(ascending):1
+test num:5
+time:0.0000080000
+ave:24340111.5151220225
+input size(ascending):1
+test num:6
+time:0.0000080000
+ave:24340111.5151220225
+input size(ascending):1
+test num:7
+time:0.0000080000
+ave:24340111.5151220225
+input size(ascending):1
+test num:8
+time:0.0000080000
+ave:24340111.5151220225
+input size(ascending):1
+test num:9
+time:0.0000080000
+ave:24340111.5151220225
+input size(ascending):1
+test num:10
+time:0.0000080000
+ave:24340111.5151220225
+input size(ascending):1
+test num:11
+time:243401115.1512202322
+ave:24340111.5151220225
+input size(ascending):2
+test num:0
+time:0.0000000000
+ave:0.0026303000
+input size(ascending):2
+test num:1
+time:0.0000160000
+ave:0.0026303000
+input size(ascending):2
+test num:2
+time:0.0000160000
+ave:0.0026303000
+input size(ascending):2
+test num:3
+time:0.0000150000
+ave:0.0026303000
+input size(ascending):2
+test num:4
+time:0.0000150000
+ave:0.0026303000
+input size(ascending):2
+test num:5
+time:0.0000150000
+ave:0.0026303000
+input size(ascending):2
+test num:6
+time:0.0000150000
+ave:0.0026303000
+input size(ascending):2
+test num:7
+time:0.0000150000
+ave:0.0026303000
+input size(ascending):2
+test num:8
+time:0.0000150000
+ave:0.0026303000
+input size(ascending):2
+test num:9
+time:0.0000160000
+ave:0.0026303000
+input size(ascending):2
+test num:10
+time:0.0000150000
+ave:0.0026303000
+input size(ascending):2
+test num:11
+time:0.0263030000
+ave:0.0026303000
+input size(ascending):3
+test num:0
+time:0.0000000000
+ave:0.0025462000
+input size(ascending):3
+test num:1
+time:0.0000860000
+ave:0.0025462000
+input size(ascending):3
+test num:2
+time:0.0000820000
+ave:0.0025462000
+input size(ascending):3
+test num:3
+time:0.0000760000
+ave:0.0025462000
+input size(ascending):3
+test num:4
+time:0.0000760000
+ave:0.0025462000
+input size(ascending):3
+test num:5
+time:0.0000760000
+ave:0.0025462000
+input size(ascending):3
+test num:6
+time:0.0000760000
+ave:0.0025462000
+input size(ascending):3
+test num:7
+time:0.0000770000
+ave:0.0025462000
+input size(ascending):3
+test num:8
+time:0.0000770000
+ave:0.0025462000
+input size(ascending):3
+test num:9
+time:0.0000760000
+ave:0.0025462000
+input size(ascending):3
+test num:10
+time:0.0000800000
+ave:0.0025462000
+input size(ascending):3
+test num:11
+time:0.0254620000
+ave:0.0025462000
+input size(ascending):4
+test num:0
+time:0.0000000000
+ave:0.0025362000
+input size(ascending):4
+test num:1
+time:0.0001640000
+ave:0.0025362000
+input size(ascending):4
+test num:2
+time:0.0001560000
+ave:0.0025362000
+input size(ascending):4
+test num:3
+time:0.0001520000
+ave:0.0025362000
+input size(ascending):4
+test num:4
+time:0.0001520000
+ave:0.0025362000
+input size(ascending):4
+test num:5
+time:0.0001520000
+ave:0.0025362000
+input size(ascending):4
+test num:6
+time:0.0001530000
+ave:0.0025362000
+input size(ascending):4
+test num:7
+time:0.0001530000
+ave:0.0025362000
+input size(ascending):4
+test num:8
+time:0.0001520000
+ave:0.0025362000
+input size(ascending):4
+test num:9
+time:0.0001520000
+ave:0.0025362000
+input size(ascending):4
+test num:10
+time:0.0001550000
+ave:0.0025362000
+input size(ascending):4
+test num:11
+time:0.0253620000
+ave:0.0025362000
+input size(ascending):5
+test num:0
+time:0.0000000000
+ave:0.0025484000
+input size(ascending):5
+test num:1
+time:0.0008780000
+ave:0.0025484000
+input size(ascending):5
+test num:2
+time:0.0007930000
+ave:0.0025484000
+input size(ascending):5
+test num:3
+time:0.0007660000
+ave:0.0025484000
+input size(ascending):5
+test num:4
+time:0.0007610000
+ave:0.0025484000
+input size(ascending):5
+test num:5
+time:0.0007600000
+ave:0.0025484000
+input size(ascending):5
+test num:6
+time:0.0007640000
+ave:0.0025484000
+input size(ascending):5
+test num:7
+time:0.0007660000
+ave:0.0025484000
+input size(ascending):5
+test num:8
+time:0.0007590000
+ave:0.0025484000
+input size(ascending):5
+test num:9
+time:0.0007590000
+ave:0.0025484000
+input size(ascending):5
+test num:10
+time:0.0007600000
+ave:0.0025484000
+input size(ascending):5
+test num:11
+time:0.0254840000
+ave:0.0025484000
+input size(ascending):6
+test num:0
+time:0.0000000000
+ave:0.0025398000
+input size(ascending):6
+test num:1
+time:0.0016730000
+ave:0.0025398000
+input size(ascending):6
+test num:2
+time:0.0015590000
+ave:0.0025398000
+input size(ascending):6
+test num:3
+time:0.0015360000
+ave:0.0025398000
+input size(ascending):6
+test num:4
+time:0.0015250000
+ave:0.0025398000
+input size(ascending):6
+test num:5
+time:0.0015660000
+ave:0.0025398000
+input size(ascending):6
+test num:6
+time:0.0015160000
+ave:0.0025398000
+input size(ascending):6
+test num:7
+time:0.0015230000
+ave:0.0025398000
+input size(ascending):6
+test num:8
+time:0.0015250000
+ave:0.0025398000
+input size(ascending):6
+test num:9
+time:0.0015220000
+ave:0.0025398000
+input size(ascending):6
+test num:10
+time:0.0015270000
+ave:0.0025398000
+input size(ascending):6
+test num:11
+time:0.0253980000
+ave:0.0025398000
+input size(ascending):7
+test num:0
+time:0.0000000000
+ave:0.0025443000
+input size(ascending):7
+test num:1
+time:0.0084140000
+ave:0.0025443000
+input size(ascending):7
+test num:2
+time:0.0076410000
+ave:0.0025443000
+input size(ascending):7
+test num:3
+time:0.0076520000
+ave:0.0025443000
+input size(ascending):7
+test num:4
+time:0.0075930000
+ave:0.0025443000
+input size(ascending):7
+test num:5
+time:0.0075970000
+ave:0.0025443000
+input size(ascending):7
+test num:6
+time:0.0076360000
+ave:0.0025443000
+input size(ascending):7
+test num:7
+time:0.0076230000
+ave:0.0025443000
+input size(ascending):7
+test num:8
+time:0.0076270000
+ave:0.0025443000
+input size(ascending):7
+test num:9
+time:0.0076130000
+ave:0.0025443000
+input size(ascending):7
+test num:10
+time:0.0076340000
+ave:0.0025443000
+input size(ascending):7
+test num:11
+time:0.0254430000
+ave:0.0025443000
+input size(ascending):8
+test num:0
+time:0.0000000000
+ave:0.0025398000
+input size(ascending):8
+test num:1
+time:0.0174120000
+ave:0.0025398000
+input size(ascending):8
+test num:2
+time:0.0160460000
+ave:0.0025398000
+input size(ascending):8
+test num:3
+time:0.0152550000
+ave:0.0025398000
+input size(ascending):8
+test num:4
+time:0.0152300000
+ave:0.0025398000
+input size(ascending):8
+test num:5
+time:0.0153080000
+ave:0.0025398000
+input size(ascending):8
+test num:6
+time:0.0152280000
+ave:0.0025398000
+input size(ascending):8
+test num:7
+time:0.0152760000
+ave:0.0025398000
+input size(ascending):8
+test num:8
+time:0.0152330000
+ave:0.0025398000
+input size(ascending):8
+test num:9
+time:0.0152220000
+ave:0.0025398000
+input size(ascending):8
+test num:10
+time:0.0152600000
+ave:0.0025398000
+input size(ascending):8
+test num:11
+time:0.0253980000
+ave:0.0025398000

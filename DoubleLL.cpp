@@ -11,19 +11,19 @@ DoubleLL::DoubleLL() {
 }
 
 DoubleLL::~DoubleLL() {
+  node<int>* next;
+	node<int>* curr = m_front;
 
-node<int>* curr = m_front;
-node<int>* next = nullptr;
+  	while (curr != nullptr)
+  	{
 
-  while (curr != nullptr)
-  {
-    next = curr->getNext();
+    	 next = curr->getNext();
 
-    delete curr;
+    	 delete curr;
 
-    curr = next;
-  }
+   	   curr = next;
 
+   }
 }
 
 node<int>* DoubleLL::getFront()
@@ -55,7 +55,8 @@ int DoubleLL::getSize(){
 }
 
 void DoubleLL::incSize(){
-  m_size++;
+
+	abs(m_size++);
 }
 
 void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
@@ -65,31 +66,17 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 
       	addFront(elem, Xcoord, Ycoord);
 
-      //  printf("adding front!! size = %i ycoord = %i\n", m_size,Ycoord);
-
       }
       else if (Ycoord >= m_size )
       {
 
 	      addBack(elem, Xcoord, Ycoord);
 
-
-//        if(m_back->getNext())
-  //      {
-    //    printf("\n\n\nm_front get next pointing at null in list > 0 (after addback call)\n\n\n");
-      //  }
-
       }
       else
       {
-      //  printf("Adding at %i size = %i \n\n",Ycoord,m_size);
 
         node<int>* pos = m_back;
-
-        if(pos->getPrev() == nullptr)
-        {
-        //  printf("\n\n\nM_BACK GET PREV IS NULLPTR ON LL WITH SIZE > 0\n\n\n");
-        }
 
         //loop through DLL to find node at pos
         for(int i = 0; i < (m_size - 1) - Ycoord; i++)
@@ -306,10 +293,6 @@ void DoubleLL::addBack(int elem, int x, int y)
 
      m_back = new_node;
 
-     if(m_size == 2 )
-     {
-       m_front->setNext(new_node);
-     }
    }
 
    incSize();
