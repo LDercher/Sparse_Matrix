@@ -65,7 +65,7 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 
       	addFront(elem, Xcoord, Ycoord);
 
-        printf("adding front!! size = %i ycoord = %i\n", m_size,Ycoord);
+      //  printf("adding front!! size = %i ycoord = %i\n", m_size,Ycoord);
 
       }
       else if (Ycoord >= m_size )
@@ -73,22 +73,22 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 
 	      addBack(elem, Xcoord, Ycoord);
 
-        printf("adding Back!! size = %i ycoord = %i\n", m_size,Ycoord);
-        if(m_back->getNext())
-        {
-        printf("\n\n\nm_front get next pointing at null in list > 0 (after addback call)\n\n\n");
-        }
+
+//        if(m_back->getNext())
+  //      {
+    //    printf("\n\n\nm_front get next pointing at null in list > 0 (after addback call)\n\n\n");
+      //  }
 
       }
       else
       {
-        printf("Adding at %i size = %i \n\n",Ycoord,m_size);
+      //  printf("Adding at %i size = %i \n\n",Ycoord,m_size);
 
         node<int>* pos = m_back;
 
         if(pos->getPrev() == nullptr)
         {
-          printf("\n\n\nM_BACK GET PREV IS NULLPTR ON LL WITH SIZE > 0\n\n\n");
+        //  printf("\n\n\nM_BACK GET PREV IS NULLPTR ON LL WITH SIZE > 0\n\n\n");
         }
 
         //loop through DLL to find node at pos
@@ -121,7 +121,7 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
       }
 
 
- print();
+ //print();
 
 }
 
