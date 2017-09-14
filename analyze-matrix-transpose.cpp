@@ -28,7 +28,7 @@ int numElems[5] = {100,500,1000,5000,10000};
 
 int x = 0;
 
-double times[5][11];
+double times[9][11];
 
 tuple<int,int> test;
 
@@ -143,13 +143,15 @@ while (x < 11)
 
     start = clock();
 
-    sm1->isEqual(sm2);
+    sm1->transpose();
 
     duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
 
+    printf("\n\n***DURATION = %.10f for test: %i with input size %i \n",duration ,x,numElems[i] );
+
     times[i][x] = duration;
 
-  printf("\n\n***DURATION = %.10f for test: %i with input size %i \n",duration ,x,numElems[i] );
+  //  printf("\n\n***times at %i, %i set to %f\n",i,x, times[i][x] );
 
       delete sm1;
       delete sm2;
@@ -177,7 +179,7 @@ for(int i = 0; i < 9; i++)
       if ( j < 10 )
       {
 
-     printf("input size(ascending):%i\ntest num:%i\ntime:%f\n",i,j,times[i][j]);
+      printf("input size(ascending):%i\ntest num:%i\ntime:%f\n",i,j,times[i][j]);
     }
     else
     {

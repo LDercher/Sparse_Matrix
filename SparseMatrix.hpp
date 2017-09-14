@@ -23,7 +23,7 @@ class SparseMatrix {
 
   bool m_orientation_row;
 
-  DoubleLL** rowOrcolPointers = new DoubleLL* [max(get<0>(m_dims),get<1>(m_dims))];
+  DoubleLL** rowOrcolPointers;
 
   public:
 

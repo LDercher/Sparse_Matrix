@@ -6,7 +6,9 @@ SparseMatrix::SparseMatrix(tuple<int,int> dims){
 
   m_dims = dims;
 
- for(int i = 0; i < max(get<0>(m_dims),get<1>(m_dims)) ; i++)
+  rowOrcolPointers = new DoubleLL* [max(get<0>(m_dims),get<1>(m_dims))];
+
+ for(int i = 0; i < max(get<0>(m_dims),get<1>(m_dims)); i++)
   {
     rowOrcolPointers[i] = nullptr;
   }
@@ -17,7 +19,7 @@ SparseMatrix::SparseMatrix(tuple<int,int> dims){
 
 SparseMatrix::~SparseMatrix(){
 
-  for(int i = 0; i < max(get<0>(m_dims),get<1>(m_dims)) ; i++)
+  for(int i = 0; i < max(get<0>(m_dims),get<1>(m_dims)); i++)
    {
      if (rowOrcolPointers[i] != NULL)
      {
@@ -31,13 +33,13 @@ void SparseMatrix::add(tuple<int,int> pos, int val){
 
   try {
 
-    if( get<0>(pos) > get<0>(m_dims))
+    if( get<0>(pos) > get<0>(m_dims) -1 )
     {
 
         throw std::out_of_range (" SparseMatrix position out of bounds");
 
     }
-    else if(get<1>(pos) > get<1>(m_dims) )
+    else if(get<1>(pos) > get<1>(m_dims) -1 )
     {
       throw std::out_of_range (" SparseMatrix position out of bounds");
     }
@@ -57,19 +59,18 @@ void SparseMatrix::add(tuple<int,int> pos, int val){
     if(rowOrcolPointers[get<0>(pos)] == nullptr)
     {
       rowOrcolPointers[get<0>(pos)] = new DoubleLL();
-      printf("Creating new dll for col %d\n", get<0>(pos));
-
-      printf("adding back to new SM at col: %i and row %i\n\n",get<0>(pos), get<1>(pos));
+  //   printf("Creating new dll for col %d\n", get<0>(pos));
       rowOrcolPointers[get<0>(pos)]->add(val, get<0>(pos), get<1>(pos));
-      printf("Added. at col %i  Current size %d\n", get<0>(pos),rowOrcolPointers[get<0>(pos)]->getSize());
-      prettyprint();
+//    printf("Adding to new DLL. at col %i  Current size %d\n", get<0>(pos),rowOrcolPointers[get<0>(pos)]->getSize());
+    //  prettyprint();
     }
     else
     {
-    // printf("found row, adding.  Current size %d\n", rowOrcolPointers[get<0>(pos)]->getSize());
+  //    printf("front at  %i  value = %d\n", get<0>(pos), rowOrcolPointers[get<0>(pos)]->getFront());
+  //  printf("Adding at col %i. row %i  Current size %d\n", get<0>(pos),get<1>(pos),rowOrcolPointers[get<0>(pos)]->getSize());
      rowOrcolPointers[get<0>(pos)]->add(val, get<0>(pos), get<1>(pos));
-     printf("Added. at col %i  Current size %d\n", get<0>(pos), rowOrcolPointers[get<0>(pos)]->getSize());
-     prettyprint();
+
+  //  prettyprint();
     }
   }
   else{
@@ -79,12 +80,12 @@ void SparseMatrix::add(tuple<int,int> pos, int val){
       rowOrcolPointers[get<1>(pos)] = new DoubleLL();
 
       rowOrcolPointers[get<1>(pos)]->add(val, get<1>(pos), get<0>(pos));
-      prettyprint();
+  //    prettyprint();
     }
     else
     {
       rowOrcolPointers[get<1>(pos)]->add(val, get<1>(pos), get<0>(pos));
-      prettyprint();
+  //    prettyprint();
     }
 
   }
@@ -93,55 +94,61 @@ void SparseMatrix::add(tuple<int,int> pos, int val){
 
 void SparseMatrix::prettyprint(){
   node<int>* temp;
-  int empty = 0;
+  bool empty = true;
 
   if(m_orientation_row){
     for(int j = 0; j < get<0>(m_dims); j++){
-      if(rowOrcolPointers[j] == nullptr){
-        empty = 1;
-      }
-      else{
-        empty = 0;
+      empty = true;
+      if(rowOrcolPointers[j] != nullptr )
+      {
+        empty = false;
         temp = rowOrcolPointers[j]->getFront();
       }
-      for(int i=0; i < get<1>(m_dims); i++){
-        if(empty){
-          printf("- ");
+      for(int i=0; i < get<1>(m_dims) ; i++)
+      {
+        if(empty)
+        {
+          printf("-");
         }
-        else{
-          if(temp == nullptr){
-            break;
+        else
+        {
+          printf("%i", temp->getValue() );
+          if (temp->getNext() == nullptr)
+          {
+            empty = true;
           }
-          printf("%d ", temp->getValue());
           temp = temp->getNext();
+
         }
+
       }
       printf("\n");
     }
   }
   else{
-    for(int j = 0; j < get<0>(m_dims); j++){
-      if(rowOrcolPointers[j] == nullptr){
-        empty = 1;
-      }
-      else{
-        empty = 0;
+    for(int j = 0; j < get<1>(m_dims); j++){
+      empty = true;
+      if(rowOrcolPointers[j] != nullptr)
+      {
+        empty = false;
         temp = rowOrcolPointers[j]->getFront();
       }
-      for(int i=0; i < get<1>(m_dims); i++){
-        if(empty){
-          printf("- ");
+      for(int i=0; i < get<0>(m_dims) ; i++)
+      {
+        if(empty)
+        {
+          printf("-");
         }
-        else{
-          if(temp == nullptr){
-            break;
-          }
-          printf("%d ", temp->getValue());
+        else
+        {
+          printf("%i", temp->getValue() );
           temp = temp->getNext();
         }
+
       }
-      printf("\n");
+
     }
+    printf("\n");
   }
 
 }
@@ -168,14 +175,12 @@ void SparseMatrix::print()
         }
         else
         {
+          if(j == get<1>(temp->getCoord()))
+          {
             printf("value= %i at ind= (%i,%i) \n\n", temp->getValue(), get<0>(temp->getCoord()),get<1>(temp->getCoord()));
-
-            if(temp->getNext() != nullptr)
-            {
-
             temp = temp->getNext();
+          }
 
-            }
         }
       }
     }
@@ -199,12 +204,11 @@ void SparseMatrix::print()
         }
         else
         {
+          if(j == get<0>(temp->getCoord()))
+          {
             printf("value= %i at ind= (%i,%i) \n\n", temp->getValue(), get<0>(temp->getCoord()),get<1>(temp->getCoord()));
-
-            if(temp->getNext() != nullptr)
-            {
             temp = temp->getNext();
-            }
+          }
         }
       }
     }
