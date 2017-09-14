@@ -14,63 +14,74 @@ clock_t start;
 double duration;
 
 int numElems[9] = {10,50,100,500,1000,5000,10000,50000,100000};
-double times[9][12];
-int x = 1;
+double times[9][11];
+int x = 0;
 
 
-while (x < 11)
+while (x < 10)
 {
-  //printf("entered 12 x test while loop \n\n");
 
-for (int i = 0; i < 10; i++ )
-{
-  DoubleLL* myDLL = new DoubleLL();
+    for (int i = 0; i < 9; i++ )
+    {
 
-  srand(time(NULL));
+    //s  cout << "*****At iteration of elems list " << i << endl;
 
-//printf("input sizes for loop \n\n");
+      DoubleLL* myDLL = new DoubleLL();
 
-  for(int j= 0; j < numElems[i]; j++)
-  {
-    start = clock();
-    myDLL->add(rand()% INT_MAX,0,myDLL->getSize() );
-    duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
+      srand(time(NULL));
 
-    times[i][x] = duration;
+        start = clock();
+      for(int j= 0; j < numElems[i]; j++)
+      {
+        myDLL->addBack(rand()% INT_MAX,0,0);
+        //printf("\n\n duration was %e \n\n size of doubleLL is %i", duration,numElems[i]);
 
-  }
+      }
+
+        duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
+
+        times[i][x] = duration;
+
+
+      delete myDLL;
 
 
 
 
-  delete myDLL;
-
-}
-
+      }
 x++;
 }
 
-for(int i = 0; i < 9; i++)
-{
-  for(int j = 0; j <  11; j++)
-  {
 
-    times[i][12]+=times[j][i];
 
-  }
 
-}
+      for(int i = 0; i < 9; i++)
+      {
+          for(int j = 0; j <  10; j++)
+          {
 
-for(int i = 0; i < 9; i++)
-{
-  for(int j = 0; j <  12; j++)
-  {
+            times[i][10]+=times[j][i];
 
-    printf("input size(ascending):%i\ntest num:%i\ntime:%f",i,j,times[i][j]);
+          }
 
-  }
+      }
 
-}
+      for(int i = 0; i < 9; i++)
+      {
+          for(int j = 0; j <  11; j++)
+          {
+            if ( j < 10 )
+            {
+            printf("input size(ascending):%i\ntest num:%i\ntime:%.10f\n",i,j,times[i][j]);
+          }
+          else
+          {
+            printf("ave = %f\n\n",times[i][10]/10);
+          }
+
+          }
+
+      }
 
 return 0;
 }

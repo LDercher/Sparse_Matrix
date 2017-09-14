@@ -1,0 +1,163 @@
+***DURATION = 0.0001470000 for test: 0 with input size 100
+
+
+***DURATION = 0.0031630000 for test: 0 with input size 500
+
+
+***DURATION = 0.0126040000 for test: 0 with input size 1000
+
+
+***DURATION = 0.2692120000 for test: 0 with input size 5000
+
+
+***DURATION = 0.9825150000 for test: 0 with input size 10000
+
+
+***DURATION = 0.0001130000 for test: 1 with input size 100
+
+
+***DURATION = 0.0024670000 for test: 1 with input size 500
+
+
+***DURATION = 0.0104290000 for test: 1 with input size 1000
+
+
+***DURATION = 0.2451730000 for test: 1 with input size 5000
+
+
+***DURATION = 0.9877790000 for test: 1 with input size 10000
+
+
+***DURATION = 0.0001130000 for test: 2 with input size 100
+
+
+***DURATION = 0.0024450000 for test: 2 with input size 500
+
+
+***DURATION = 0.0107820000 for test: 2 with input size 1000
+
+
+***DURATION = 0.2468210000 for test: 2 with input size 5000
+
+
+***DURATION = 0.9802360000 for test: 2 with input size 10000
+
+
+***DURATION = 0.0001130000 for test: 3 with input size 100
+
+
+***DURATION = 0.0024750000 for test: 3 with input size 500
+
+
+***DURATION = 0.0107170000 for test: 3 with input size 1000
+
+
+***DURATION = 0.2451610000 for test: 3 with input size 5000
+
+
+***DURATION = 0.9798930000 for test: 3 with input size 10000
+
+
+***DURATION = 0.0001130000 for test: 4 with input size 100
+
+
+***DURATION = 0.0025770000 for test: 4 with input size 500
+
+
+***DURATION = 0.0102700000 for test: 4 with input size 1000
+
+
+***DURATION = 0.2443900000 for test: 4 with input size 5000
+
+
+***DURATION = 0.9832880000 for test: 4 with input size 10000
+
+
+***DURATION = 0.0001140000 for test: 5 with input size 100
+
+
+***DURATION = 0.0025470000 for test: 5 with input size 500
+
+
+***DURATION = 0.0107410000 for test: 5 with input size 1000
+
+
+***DURATION = 0.2449580000 for test: 5 with input size 5000
+
+
+***DURATION = 0.9798890000 for test: 5 with input size 10000
+
+
+***DURATION = 0.0001130000 for test: 6 with input size 100
+
+
+***DURATION = 0.0025300000 for test: 6 with input size 500
+
+
+***DURATION = 0.0106190000 for test: 6 with input size 1000
+
+
+***DURATION = 0.2462460000 for test: 6 with input size 5000
+
+
+***DURATION = 0.9811290000 for test: 6 with input size 10000
+
+
+***DURATION = 0.0001130000 for test: 7 with input size 100
+
+
+***DURATION = 0.0025630000 for test: 7 with input size 500
+
+
+***DURATION = 0.0104630000 for test: 7 with input size 1000
+
+
+***DURATION = 0.2445570000 for test: 7 with input size 5000
+
+
+***DURATION = 0.9815380000 for test: 7 with input size 10000
+
+
+***DURATION = 0.0001130000 for test: 8 with input size 100
+
+
+***DURATION = 0.0024420000 for test: 8 with input size 500
+
+
+***DURATION = 0.0104940000 for test: 8 with input size 1000
+
+
+***DURATION = 0.2451590000 for test: 8 with input size 5000
+
+
+***DURATION = 0.9834700000 for test: 8 with input size 10000
+
+
+***DURATION = 0.0001130000 for test: 9 with input size 100
+
+
+***DURATION = 0.0024780000 for test: 9 with input size 500
+
+
+***DURATION = 0.0104430000 for test: 9 with input size 1000
+
+
+***DURATION = 0.2449650000 for test: 9 with input size 5000
+
+
+***DURATION = 0.9800990000 for test: 9 with input size 10000
+
+
+***DURATION = 0.0001130000 for test: 10 with input size 100
+
+
+***DURATION = 0.0024710000 for test: 10 with input size 500
+
+
+***DURATION = 0.0103660000 for test: 10 with input size 1000
+
+
+***DURATION = 0.2471490000 for test: 10 with input size 5000
+
+
+***DURATION = 0.9807560000 for test: 10 with input size 10000
