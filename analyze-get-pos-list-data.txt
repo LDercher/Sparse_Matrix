@@ -1,293 +1,287 @@
-
-int numElems[9] = {10,50,100,500,1000,5000,10000,50000,100000};
-
-input size corresponds to elems in array
-
-
 input size(ascending):0
 test num:0
-time:0.0000030000
+time:0.00000300000000000000
 input size(ascending):0
 test num:1
-time:0.0000020000
+time:0.00000300000000000000
 input size(ascending):0
 test num:2
-time:0.0000030000
+time:0.00000300000000000000
 input size(ascending):0
 test num:3
-time:0.0000020000
+time:0.00000300000000000000
 input size(ascending):0
 test num:4
-time:0.0000020000
+time:0.00000200000000000000
 input size(ascending):0
 test num:5
-time:0.0000020000
+time:0.00000500000000000000
 input size(ascending):0
 test num:6
-time:0.0000020000
+time:0.00000200000000000000
 input size(ascending):0
 test num:7
-time:0.0000020000
+time:0.00000300000000000000
 input size(ascending):0
 test num:8
-time:0.0000020000
+time:0.00000200000000000000
 input size(ascending):0
 test num:9
-time:0.0000010000
-ave = 0.002913
+time:0.00000200000000000000
+ave = 0.000942
 
 input size(ascending):1
 test num:0
-time:0.0000100000
+time:0.00000400000000000000
 input size(ascending):1
 test num:1
-time:0.0000080000
+time:0.00000400000000000000
 input size(ascending):1
 test num:2
-time:0.0000080000
+time:0.00000400000000000000
 input size(ascending):1
 test num:3
-time:0.0000080000
+time:0.00000400000000000000
 input size(ascending):1
 test num:4
-time:0.0000080000
+time:0.00000400000000000000
 input size(ascending):1
 test num:5
-time:0.0000070000
+time:0.00000300000000000000
 input size(ascending):1
 test num:6
-time:0.0000080000
+time:0.00000400000000000000
 input size(ascending):1
 test num:7
-time:0.0000080000
+time:0.00000300000000000000
 input size(ascending):1
 test num:8
-time:0.0000080000
+time:0.00000400000000000000
 input size(ascending):1
 test num:9
-time:0.0000070000
-ave = 0.002548
+time:0.00000400000000000000
+ave = 0.000830
 
 input size(ascending):2
 test num:0
-time:0.0000180000
+time:0.00000300000000000000
 input size(ascending):2
 test num:1
-time:0.0000160000
+time:0.00000200000000000000
 input size(ascending):2
 test num:2
-time:0.0000160000
+time:0.00000200000000000000
 input size(ascending):2
 test num:3
-time:0.0000350000
+time:0.00000200000000000000
 input size(ascending):2
 test num:4
-time:0.0000160000
+time:0.00000200000000000000
 input size(ascending):2
 test num:5
-time:0.0000150000
+time:0.00000200000000000000
 input size(ascending):2
 test num:6
-time:0.0000160000
+time:0.00000300000000000000
 input size(ascending):2
 test num:7
-time:0.0000180000
+time:0.00000300000000000000
 input size(ascending):2
 test num:8
-time:0.0000150000
+time:0.00000200000000000000
 input size(ascending):2
 test num:9
-time:0.0000150000
-ave = 0.002562
+time:0.00000200000000000000
+ave = 0.000848
 
 input size(ascending):3
 test num:0
-time:0.0000930000
+time:0.00003200000000000000
 input size(ascending):3
 test num:1
-time:0.0000760000
+time:0.00002900000000000000
 input size(ascending):3
 test num:2
-time:0.0000760000
+time:0.00002900000000000000
 input size(ascending):3
 test num:3
-time:0.0000770000
+time:0.00002900000000000000
 input size(ascending):3
 test num:4
-time:0.0000760000
+time:0.00002900000000000000
 input size(ascending):3
 test num:5
-time:0.0000770000
+time:0.00002800000000000000
 input size(ascending):3
 test num:6
-time:0.0000760000
+time:0.00003000000000000000
 input size(ascending):3
 test num:7
-time:0.0000760000
+time:0.00002900000000000000
 input size(ascending):3
 test num:8
-time:0.0000770000
+time:0.00002900000000000000
 input size(ascending):3
 test num:9
-time:0.0000760000
-ave = 0.002588
+time:0.00002900000000000000
+ave = 0.000883
 
 input size(ascending):4
 test num:0
-time:0.0001780000
+time:0.00006200000000000000
 input size(ascending):4
 test num:1
-time:0.0001520000
+time:0.00004500000000000000
 input size(ascending):4
 test num:2
-time:0.0001530000
+time:0.00004500000000000000
 input size(ascending):4
 test num:3
-time:0.0001520000
+time:0.00004500000000000000
 input size(ascending):4
 test num:4
-time:0.0001520000
+time:0.00004500000000000000
 input size(ascending):4
 test num:5
-time:0.0001510000
+time:0.00004400000000000000
 input size(ascending):4
 test num:6
-time:0.0001530000
+time:0.00004400000000000000
 input size(ascending):4
 test num:7
-time:0.0001530000
+time:0.00004500000000000000
 input size(ascending):4
 test num:8
-time:0.0001520000
+time:0.00004500000000000000
 input size(ascending):4
 test num:9
-time:0.0001520000
-ave = 0.002561
+time:0.00004500000000000000
+ave = 0.000848
 
 input size(ascending):5
 test num:0
-time:0.0009810000
+time:0.00064000000000000005
 input size(ascending):5
 test num:1
-time:0.0007660000
+time:0.00047199999999999998
 input size(ascending):5
 test num:2
-time:0.0007600000
+time:0.00046099999999999998
 input size(ascending):5
 test num:3
-time:0.0009040000
+time:0.00045199999999999998
 input size(ascending):5
 test num:4
-time:0.0007660000
+time:0.00046400000000000000
 input size(ascending):5
 test num:5
-time:0.0007580000
+time:0.00045700000000000000
 input size(ascending):5
 test num:6
-time:0.0007640000
+time:0.00045199999999999998
 input size(ascending):5
 test num:7
-time:0.0007630000
+time:0.00046000000000000001
 input size(ascending):5
 test num:8
-time:0.0007590000
+time:0.00047199999999999998
 input size(ascending):5
 test num:9
-time:0.0007600000
-ave = 0.002543
+time:0.00045300000000000001
+ave = 0.000820
 
 input size(ascending):6
 test num:0
-time:0.0017650000
+time:0.00029700000000000001
 input size(ascending):6
 test num:1
-time:0.0015240000
+time:0.00020200000000000000
 input size(ascending):6
 test num:2
-time:0.0015840000
+time:0.00020300000000000000
 input size(ascending):6
 test num:3
-time:0.0015690000
+time:0.00020599999999999999
 input size(ascending):6
 test num:4
-time:0.0015830000
+time:0.00019699999999999999
 input size(ascending):6
 test num:5
-time:0.0015170000
+time:0.00020799999999999999
 input size(ascending):6
 test num:6
-time:0.0015200000
+time:0.00020900000000000001
 input size(ascending):6
 test num:7
-time:0.0015210000
+time:0.00019699999999999999
 input size(ascending):6
 test num:8
-time:0.0015230000
+time:0.00020400000000000000
 input size(ascending):6
 test num:9
-time:0.0015170000
-ave = 0.002542
+time:0.00020200000000000000
+ave = 0.000859
 
 input size(ascending):7
 test num:0
-time:0.0089020000
+time:0.00066399999999999999
 input size(ascending):7
 test num:1
-time:0.0076840000
+time:0.00071100000000000004
 input size(ascending):7
 test num:2
-time:0.0076940000
+time:0.00067000000000000002
 input size(ascending):7
 test num:3
-time:0.0077760000
+time:0.00059599999999999996
 input size(ascending):7
 test num:4
-time:0.0076030000
+time:0.00059999999999999995
 input size(ascending):7
 test num:5
-time:0.0076100000
+time:0.00061700000000000004
 input size(ascending):7
 test num:6
-time:0.0076080000
+time:0.00063500000000000004
 input size(ascending):7
 test num:7
-time:0.0076110000
+time:0.00060099999999999997
 input size(ascending):7
 test num:8
-time:0.0075910000
+time:0.00059900000000000003
 input size(ascending):7
 test num:9
-time:0.0076280000
-ave = 0.002538
+time:0.00062000000000000000
+ave = 0.000882
 
 input size(ascending):8
 test num:0
-time:0.0171760000
+time:0.00771200000000000011
 input size(ascending):8
 test num:1
-time:0.0152480000
+time:0.00683200000000000040
 input size(ascending):8
 test num:2
-time:0.0153270000
+time:0.00706099999999999957
 input size(ascending):8
 test num:3
-time:0.0153560000
+time:0.00749700000000000019
 input size(ascending):8
 test num:4
-time:0.0154050000
+time:0.00714099999999999978
 input size(ascending):8
 test num:5
-time:0.0152910000
+time:0.00683299999999999966
 input size(ascending):8
 test num:6
-time:0.0152770000
+time:0.00721000000000000026
 input size(ascending):8
 test num:7
-time:0.0152280000
+time:0.00748400000000000020
 input size(ascending):8
 test num:8
-time:0.0152970000
+time:0.00718599999999999968
 input size(ascending):8
 test num:9
-time:0.0152390000
-ave = 0.002542
+time:0.00681700000000000014
+ave = 0.000854

@@ -46,7 +46,13 @@ analyze-getPositionList: DoubleLL node
 analyze-matrix-equality: DoubleLL node SparseMatrix
 	$(GCC) $(CFLAGS) -c analyze-matrix-equality.cpp -o analyze-matrix-equality.o
 	$(GCC) $(CFLAGS) -o MEtest analyze-matrix-equality.o SparseMatrix.o DoubleLL.o node.o
-	#./MEtest
+	./MEtest
+
+analyze-matrix-transpose: DoubleLL node SparseMatrix
+		$(GCC) $(CFLAGS) -c analyze-matrix-transpose.cpp -o analyze-matrix-transpose.o
+		$(GCC) $(CFLAGS) -o TRANtest analyze-matrix-transpose.o SparseMatrix.o DoubleLL.o node.o
+		./TRANtest
+
 
 
 clean:

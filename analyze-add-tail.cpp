@@ -14,11 +14,11 @@ clock_t start;
 double duration;
 
 int numElems[9] = {10,50,100,500,1000,5000,10000,50000,100000};
-double times[9][12];
-int x = 1;
+double times[9][11];
+int x = 0;
 
 
-while (x < 11)
+while (x < 10)
 {
 
     for (int i = 0; i < 9; i++ )
@@ -57,10 +57,10 @@ x++;
 
       for(int i = 0; i < 9; i++)
       {
-          for(int j = 0; j <  11; j++)
+          for(int j = 0; j <  10; j++)
           {
 
-            times[i][11]+=times[j][i];
+            times[i][10]+=times[j][i];
 
           }
 
@@ -68,11 +68,16 @@ x++;
 
       for(int i = 0; i < 9; i++)
       {
-          for(int j = 0; j <  12; j++)
+          for(int j = 0; j <  11; j++)
           {
-
-            printf("input size(ascending):%i\ntest num:%i\ntime:%.10f\nave:%.10f\n",i,j,times[i][j],times[i][11]/10);
-
+            if ( j < 10 )
+            {
+            printf("input size(ascending):%i\ntest num:%i\ntime:%.10f\n",i,j,times[i][j]);
+          }
+          else
+          {
+            printf("ave = %f\n\n",times[i][10]/10);
+          }
 
           }
 

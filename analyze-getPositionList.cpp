@@ -17,13 +17,13 @@ DoubleLL* temp;
 
 int numElems[9] = {10,50,100,500,1000,5000,10000,50000,100000};
 
-int x = 1;
+int x = 0;
 
-double times[11];
+double times[9][11];
 
 int ran;
 
-while (x < 11)
+while (x < 10)
 {
 
   for (int i = 0; i < 9; i++ )
@@ -41,7 +41,7 @@ while (x < 11)
 
     DoubleLL* posList = new DoubleLL();
 
-    for(int k = 0; k < (1+ rand() / (RAND_MAX / 101)); k++)
+    for(int k = 0; k < (1 + ( rand() %  100  )); k++)
     {
 
       posList->addBack(rand(), 0, 0);
@@ -54,25 +54,54 @@ while (x < 11)
 
     duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
 
+    times[i][x] = duration;
+
+
+
+
     delete myDLL;
     delete posList;
 
   }
-  times[x-1] = duration;
+
   x++;
   }
 
-  printf("times:" );
-
-  for (int j = 0; j < 10; j++)
+  for(int i = 0; i < 9; i++)
   {
-    times[11] += times[j];
+      for(int j = 0; j <  10; j++)
+      {
 
-    printf(" %f ", times[j]);
+        times[i][10]+=times[j][i];
+
+      }
 
   }
 
-  printf("\naverage time: %f \n\n", times[11]/10);
+  for(int i = 0; i < 9; i++)
+  {
+      for(int j = 0; j <  11; j++)
+      {
+        if ( j < 10 )
+        {
+
+        printf("input size(ascending):%i\ntest num:%i\ntime:%.20f\n",i,j,times[i][j]);
+      }
+      else
+      {
+        if(times[i][10]/10 < 0)
+        {
+          printf("ave = %i\n\n",0);
+        }
+        else
+        {
+        printf("ave = %f\n\n",times[i][10]/10);
+        }
+      }
+
+      }
+
+  }
 
 return 0;
 }

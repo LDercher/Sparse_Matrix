@@ -86,7 +86,7 @@ void DoubleLL::add(int elem, int Xcoord, int Ycoord) {
 
         node<int>* new_node = new node<int>();
 
-        incSize();
+         m_size++;
 
         new_node->setValue(elem);
 
@@ -244,14 +244,14 @@ void DoubleLL::addFront(int elem, int x, int y)
 
    new_node->setCoord(x,y);
 
-   if(m_size == 0)
-   {
+     if(m_size == 0)
+    {
 
      m_front = new_node;
 
      m_back = new_node;
 
-   }
+     }
    else
    {
 
@@ -263,7 +263,7 @@ void DoubleLL::addFront(int elem, int x, int y)
 
    }
 
-   incSize();
+   m_size++;
 
 }
 
@@ -295,7 +295,7 @@ void DoubleLL::addBack(int elem, int x, int y)
 
    }
 
-   incSize();
+    m_size++;
 
 }
 
