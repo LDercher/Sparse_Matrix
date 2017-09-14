@@ -204,6 +204,23 @@ void DoubleLL::deleteAtInd(int ind)
 
   }
 
+  if (m_size == 0)
+  {
+    return;
+  }
+
+  if(m_size == 1)
+  {
+    delete m_front;
+
+    m_front = nullptr;
+
+    m_back == nullptr;
+
+    return;
+
+  }
+
   node<int>* temp = m_front;
 
   int searchInd = 0;
